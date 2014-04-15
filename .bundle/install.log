@@ -1,0 +1,25 @@
+# Logfile created on 2014-04-15 11:04:04 +0900 by logger.rb/41954
+I, [2014-04-15T11:04:04.940908 #10828]  INFO -- : 0:  addressable (2.3.6) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/addressable-2.3.6.gemspec
+I, [2014-04-15T11:04:04.941503 #10828]  INFO -- : 0:  trollop (2.0) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/trollop-2.0.gemspec
+I, [2014-04-15T11:04:04.941889 #10828]  INFO -- : 0:  filewatcher (0.3.3) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/filewatcher-0.3.3.gemspec
+I, [2014-04-15T11:04:06.515637 #10828]  INFO -- : 0:  multi_json (1.9.2) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/multi_json-1.9.2.gemspec
+I, [2014-04-15T11:04:06.516370 #10828]  INFO -- : 0:  multi_xml (0.5.5) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/multi_xml-0.5.5.gemspec
+I, [2014-04-15T11:04:06.516788 #10828]  INFO -- : 0:  httparty (0.10.2) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/httparty-0.10.2.gemspec
+I, [2014-04-15T11:04:06.517158 #10828]  INFO -- : 0:  json (1.5.5) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/json-1.5.5.gemspec
+I, [2014-04-15T11:04:06.517503 #10828]  INFO -- : 0:  launchy (2.4.2) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/launchy-2.4.2.gemspec
+I, [2014-04-15T11:04:09.671906 #10828]  INFO -- : 0:  sass (3.3.4) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/sass-3.3.4.gemspec
+I, [2014-04-15T11:04:12.017567 #10828]  INFO -- : 0:  thor (0.19.1) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/thor-0.19.1.gemspec
+I, [2014-04-15T11:04:12.018154 #10828]  INFO -- : 0:  shopify_theme (0.0.17) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/shopify_theme-0.0.17.gemspec
+I, [2014-04-15T11:04:12.018491 #10828]  INFO -- : 0:  bundler (1.5.1) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353@global/specifications/bundler-1.5.1.gemspec
+I, [2014-04-15T12:02:04.118631 #11630]  INFO -- : 0:  addressable (2.3.6) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/addressable-2.3.6.gemspec
+I, [2014-04-15T12:02:04.185426 #11630]  INFO -- : 0:  trollop (2.0) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/trollop-2.0.gemspec
+I, [2014-04-15T12:02:04.185838 #11630]  INFO -- : 0:  filewatcher (0.3.3) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/filewatcher-0.3.3.gemspec
+I, [2014-04-15T12:02:04.186232 #11630]  INFO -- : 0:  multi_json (1.9.2) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/multi_json-1.9.2.gemspec
+I, [2014-04-15T12:02:04.186604 #11630]  INFO -- : 0:  multi_xml (0.5.5) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/multi_xml-0.5.5.gemspec
+I, [2014-04-15T12:02:04.186977 #11630]  INFO -- : 0:  httparty (0.10.2) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/httparty-0.10.2.gemspec
+I, [2014-04-15T12:02:04.187378 #11630]  INFO -- : 0:  json (1.5.5) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/json-1.5.5.gemspec
+I, [2014-04-15T12:02:04.187730 #11630]  INFO -- : 0:  launchy (2.4.2) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/launchy-2.4.2.gemspec
+I, [2014-04-15T12:02:04.188079 #11630]  INFO -- : 0:  sass (3.3.4) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/sass-3.3.4.gemspec
+I, [2014-04-15T12:02:04.188413 #11630]  INFO -- : 0:  thor (0.19.1) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/thor-0.19.1.gemspec
+I, [2014-04-15T12:02:04.188761 #11630]  INFO -- : 0:  shopify_theme (0.0.17) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353/specifications/shopify_theme-0.0.17.gemspec
+I, [2014-04-15T12:02:04.189080 #11630]  INFO -- : 0:  bundler (1.5.1) from /Users/Kirk/.rvm/gems/ruby-2.0.0-p353@global/specifications/bundler-1.5.1.gemspec

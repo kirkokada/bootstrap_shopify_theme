@@ -251,6 +251,7 @@ th {
   font-family: 'Glyphicons Halflings';
   src: url("bootstrap/glyphicons-halflings-regular.eot");
   src: url("bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -875,7 +876,7 @@ th {
 
 html {
   font-size: 62.5%;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -4041,6 +4042,7 @@ a.thumbnail.active {
 
   to {
     background-position: 0 0; } }
+
 .progress {
   overflow: hidden;
   height: 20px;
@@ -4686,7 +4688,7 @@ button.close {
     width: 900px; } }
 .tooltip {
   position: absolute;
-  z-index: 1030;
+  z-index: 1070;
   display: block;
   visibility: visible;
   font-size: 12px;
@@ -4774,7 +4776,7 @@ button.close {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1010;
+  z-index: 1060;
   display: none;
   max-width: 276px;
   padding: 1px;
@@ -4961,16 +4963,17 @@ button.close {
     display: inline-block; }
   .carousel-control .icon-prev,
   .carousel-control .glyphicon-chevron-left {
-    left: 50%; }
+    left: 50%;
+    margin-left: -10px; }
   .carousel-control .icon-next,
   .carousel-control .glyphicon-chevron-right {
-    right: 50%; }
+    right: 50%;
+    margin-right: -10px; }
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
     width: 20px;
     height: 20px;
     margin-top: -10px;
-    margin-left: -10px;
     font-family: serif; }
   .carousel-control .icon-prev:before {
     content: '\2039'; }
@@ -4997,7 +5000,7 @@ button.close {
     border-radius: 10px;
     cursor: pointer;
     background-color: #000 \9;
-    background-color: transparent; }
+    background-color: rgba(0, 0, 0, 0); }
   .carousel-indicators .active {
     margin: 0;
     width: 12px;
@@ -5026,8 +5029,13 @@ button.close {
     width: 30px;
     height: 30px;
     margin-top: -15px;
-    margin-left: -15px;
     font-size: 30px; }
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .icon-prev {
+    margin-left: -15px; }
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next {
+    margin-right: -15px; }
 
   .carousel-caption {
     left: 20%;
@@ -5078,6 +5086,7 @@ button.close {
 
 @-ms-viewport {
   width: device-width; }
+
 .visible-xs, .visible-sm, .visible-md, .visible-lg {
   display: none !important; }
 
@@ -5653,13 +5662,13 @@ body:after {
     content: 'sm'; }
 
   .caption h4 {
-    height: 3em; } }
+    height: 2em; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   body:after {
     content: 'md'; }
 
   .caption h4 {
-    height: 4em; } }
+    height: 2em; } }
 @media (min-width: 1200px) {
   body:after {
     content: 'lg'; }

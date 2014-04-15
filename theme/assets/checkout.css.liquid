@@ -5306,7 +5306,7 @@ button.close {
     width: 900px; } }
 .tooltip {
   position: absolute;
-  z-index: 1030;
+  z-index: 1070;
   display: block;
   visibility: visible;
   font-size: 12px;
@@ -5394,7 +5394,7 @@ button.close {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1010;
+  z-index: 1060;
   display: none;
   max-width: 276px;
   padding: 1px;
@@ -5581,16 +5581,17 @@ button.close {
     display: inline-block; }
   .carousel-control .icon-prev,
   .carousel-control .glyphicon-chevron-left {
-    left: 50%; }
+    left: 50%;
+    margin-left: -10px; }
   .carousel-control .icon-next,
   .carousel-control .glyphicon-chevron-right {
-    right: 50%; }
+    right: 50%;
+    margin-right: -10px; }
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
     width: 20px;
     height: 20px;
     margin-top: -10px;
-    margin-left: -10px;
     font-family: serif; }
   .carousel-control .icon-prev:before {
     content: '\2039'; }
@@ -5646,8 +5647,13 @@ button.close {
     width: 30px;
     height: 30px;
     margin-top: -15px;
-    margin-left: -15px;
     font-size: 30px; }
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .icon-prev {
+    margin-left: -15px; }
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next {
+    margin-right: -15px; }
 
   .carousel-caption {
     left: 20%;
