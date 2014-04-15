@@ -1,0 +1,35 @@
+{% include '__has-variables' %}
+
+{% unless settings.homepage == blank %}{% assign homepage = pages[settings.homepage] %}
+<h1 class="page-header">{{ homepage.title }}</h1>
+{% unless homepage.content == blank %}
+  {% include '__formatted-content' with homepage.content %}
+{% endunless %}
+{% endunless %}
+
+{% include 'features-linklist-overview' with 'linklist' %}
+
+{% unless settings.featured-collections-linklist == blank %}
+<h2 class="page-header">{{ linklists[settings.featured-collections-linklist].title }}</h2>
+  {% include 'collections-list' with 'featured' %}
+{% endunless %}
+
+{% if settings.homepage-featured-products-collection %}
+{% assign featured_collection = collections[settings.homepage-featured-products-collection] %}
+<h2 class="page-header"><a href="{{ featured_collection.url }}">{{ featured_collection.title }}</a>{% if featured_collection.products.size > per-row %}&emsp;<a class="small" href="{{ featured_collection.url }}">{% include '__localize' with 'View all' %}</a>{% endif %}</h2>
+  {% include 'products-list' with 'featured' %}
+{% endif %}
+
+{% include 'featured-blog-overview' with 'blog' %}
+
+{% include 'testimonials' %}
+
+{% assign album_set = false %}
+{% for fb in blogs[settings.blog-for-facebook-album].articles %}
+  {% if fb.metafields.social-feed.facebook-album != blank and album_set != true %}
+    {% include 'social-feed-facebook' with fb %}
+    {% assign album_set = true %}
+  {% endif %}
+{% endfor %}
+
+{% include 'social-feed-instagram' with homepage %}
