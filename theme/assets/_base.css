@@ -1513,7 +1513,7 @@ pre {
     width: 25%; }
 
   .col-sm-4 {
-    width: 33.33333%; }
+    width: 30%; }
 
   .col-sm-5 {
     width: 41.66667%; }
@@ -3965,6 +3965,7 @@ a.badge:hover, a.badge:focus {
     display: block;
     max-width: 100%;
     height: auto;
+    padding-top: 15px;
     margin-left: auto;
     margin-right: auto; }
   .thumbnail .caption {
@@ -5361,6 +5362,10 @@ a.icon:hover {
 #product-form .product-price {
   font-size: 20px; }
 
+.product-list-item {
+  border-radius: 2px;
+  margin: 7.5px; }
+
 #currencies-picker {
   padding: 0; }
 
@@ -5623,7 +5628,7 @@ a.icon:hover {
     .dropdown-menu > li.submenu > .nav > li > a {
       padding: 3px 20px;
       white-space: nowrap; }
-      .dropdown-menu > li.submenu > .nav > li > a:hover, .dropdown-menu > li.submenu > .nav > li > a:focus {
+      .dropdown-menu > li.submenu > .nav > li > a:hover {
         background-color: whitesmoke; }
     .dropdown-menu > li.submenu .dropdown-header {
       font-weight: bold;
@@ -5662,13 +5667,13 @@ body:after {
     content: 'sm'; }
 
   .caption h4 {
-    height: 2em; } }
+    height: 3em; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   body:after {
     content: 'md'; }
 
   .caption h4 {
-    height: 2em; } }
+    height: 4em; } }
 @media (min-width: 1200px) {
   body:after {
     content: 'lg'; }

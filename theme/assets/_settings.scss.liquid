@@ -139,18 +139,6 @@ $product-background-colour:
   {% else %}
     $body-background-colour
   {% endif %};
-$product-background-margin:
-  {% if settings.product-background-margin != blank %}
-    {{ settings.product-background-margin }}
-  {% else %}
-    0
-  {% endif %};
-$product-background-padding:
-  {% if settings.product-background-padding != blank %}
-    {{ settings.product-background-padding }}
-  {% else %}
-    0
-  {% endif %};
 
 {% for i in (i..5) %}
   {% assign c = i | plus: 1 %}
@@ -503,7 +491,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     font-size: floor($font-size-heading / 1.5);
   }
   h4{
-    font-size: floor($font-size-heading / 2);
+    font-size: floor($font-size-heading / 1.5);
   }
   h5{
     font-size: floor($font-size-heading / 2.5);
@@ -544,6 +532,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     border-color: darken($button-colour, 2%);
     color: $button-text-colour;
   }
+}
+
+.product-list-item {
+  background-color: $product-background-colour;
 }
 
 #navbar-top, #navbar-footer{

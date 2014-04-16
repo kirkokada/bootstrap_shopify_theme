@@ -151,6 +151,10 @@ a.icon:hover {
   }
 }
 
+.product-list-item {
+  margin: $grid-gutter-width / 4;
+}
+
 #currencies-picker {
   padding: 0;
 }
@@ -517,8 +521,7 @@ header .article-meta{
       > .nav > li > a{
         padding: 3px 20px;
         white-space: nowrap; // prevent links from randomly breaking onto new lines
-        &:hover,
-        &:focus {
+        &:hover {
           background-color: $dropdown-link-hover-bg;
         }
       }
