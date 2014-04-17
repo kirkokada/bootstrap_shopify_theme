@@ -95,7 +95,17 @@ $footer-heading-colour: {% if settings.footer-heading-colour != blank %}{{ setti
 $footer-text-colour: {% if settings.footer-text-colour != blank %}{{ settings.footer-text-colour }}{% else %}$body-text-colour{% endif %};
 $footer-link-colour: {% if settings.footer-link-colour != blank %}{{ settings.footer-link-colour }}{% else %}$body-link-colour{% endif %};
 
-$font-family-body: {% if settings.font-body-custom != blank %}'{{ settings.font-body-custom | remove: "'" | remove: '"' }}'{% if settings.font-body != blank %},{{ settings.font-body }}{% endif %}{% elsif settings.font-body != blank %}{{ settings.font-body }}{% else %}false{% endif %};
+$font-family-body: 
+  {% if settings.font-body-custom != blank %}
+    '{{ settings.font-body-custom | remove: "'" | remove: '"' }}'
+    {% if settings.font-body != blank %}
+    ,{{ settings.font-body }}
+    {% endif %}
+  {% elsif settings.font-body != blank %}
+    {{ settings.font-body }}
+  {% else %}
+    false
+  {% endif %};
 $font-weight-body: {% if settings.font-body-weight != blank %}{{ settings.font-body-weight }}{% else %}normal{% endif %};
 $font-size-body: {% if settings.font-body-size != blank %}{{ settings.font-body-size }}{% else %}false{% endif %};
 $font-transform-body: {% if settings.font-body-case == 'lowercase' or settings.font-body-case == 'uppercase' %}{{ settings.font-body-case }}{% elsif settings.font-body-case == 'title-case'%}capitalize{% else %}none{% endif %};
@@ -133,11 +143,11 @@ $font-nav-secondary-italic: {% if settings.font-nav-secondary-style == 'italic' 
 
 $show-borders: {% if settings.show-borders %}true{% else %}false{% endif %};
 
-$product-background-colour: 
-  {% if settings.product-background-colour != blank %}
-    {{ settings.product-background-colour }}
+$price-text-color: 
+  {% if settings.price-text-color %}
+    {{ settings.price-text-color }}
   {% else %}
-    $body-background-colour
+    #000000
   {% endif %};
 
 {% for i in (i..5) %}
@@ -522,6 +532,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   color: lighten-colour($body-text-colour, $body-background-colour, 45%);
 }
 
+
+.product-price { 
+  color: $price-text-color;
+  font-weight: bold;
+}
+
 .pagination > .active > a {
   background-color: $button-colour;
   border-color: $button-colour;
@@ -532,10 +548,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     border-color: darken($button-colour, 2%);
     color: $button-text-colour;
   }
-}
-
-.product-list-item {
-  background-color: $product-background-colour;
 }
 
 #navbar-top, #navbar-footer{

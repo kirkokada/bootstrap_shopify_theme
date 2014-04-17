@@ -247,10 +247,14 @@ th {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url("bootstrap/glyphicons-halflings-regular.eot");
-  src: url("bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), 
+       url("bootstrap/glyphicons-halflings-regular.woff")       format("woff"), 
+       url("bootstrap/glyphicons-halflings-regular.ttf")        format("truetype"), 
+       url("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -1513,7 +1517,7 @@ pre {
     width: 25%; }
 
   .col-sm-4 {
-    width: 30%; }
+    width: 31%; }
 
   .col-sm-5 {
     width: 41.66667%; }
@@ -2224,7 +2228,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 34px;
+  height: 30px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42858;
@@ -2301,6 +2305,8 @@ input[type="month"] {
     line-height: 46px; }
 
 .form-group {
+  display: inline;
+  margin-top: 15;
   margin-bottom: 15px; }
 
 .radio,
@@ -3964,7 +3970,6 @@ a.badge:hover, a.badge:focus {
   .thumbnail a > img {
     display: block;
     max-width: 100%;
-    padding: 15px 0 15px 0;
     height: auto;
     margin-left: auto;
     margin-right: auto; }
@@ -5285,8 +5290,16 @@ h6 {
   margin-top: 0; }
 
 .product-list-item {
-  border-radius: 3px;
-  margin: 7.5px; }
+  padding: 0;
+  margin: 5px; }
+
+.add-to-cart-left, .add-to-cart-right {
+  width: 45%;
+}
+
+.add-to-cart-right {
+  padding-left: 10%;
+}
 
 #footer-content .col-sm-3 > h4, #footer-content .col-sm-3 > .social-icons,
 #footer-content .col-sm-4 > h4,
@@ -5359,11 +5372,30 @@ a.icon:hover {
     right: 0;
     top: 0; }
 
+#footer-payment-methods{
+  clear: both;
+  border-top: solid 1px #D7D7D7;
+  padding: 15px 0 0 0;
+  text-align: center;
+  }
+#footer-payment-methods p{
+  margin: 0 0 5px 0;
+  }
+#footer-payment-methods img{
+  width: 50px;
+  display: inline;
+  }
+.ie6 #footer-payment-methods, .ie7 #footer-payment-methods, .ie8 #footer-payment-methods {
+  display: none;
+  } 
+
+
 #product-form #quantity {
   max-width: 5em; }
 #product-form #purchase {
   margin-top: 30px; }
 #product-form .product-price {
+  margin-top: 20px;
   font-size: 20px; }
 
 .product-list-item {
@@ -5450,6 +5482,7 @@ a.icon:hover {
   text-shadow: none;
   padding: 0 15px 15px; }
   .carousel-caption h2 {
+    width: auto;
     font-size: 4em; }
   .carousel-caption .btn {
     margin-top: 30px; }
@@ -5676,10 +5709,10 @@ body:after {
     content: 'md'; }
 
   .caption h4 {
-    height: 4em; } }
+    height: 3em; } }
 @media (min-width: 1200px) {
   body:after {
     content: 'lg'; }
 
   .caption h4 {
-    height: 3em; } }
+    height: 2.5em; } }

@@ -8,12 +8,22 @@
       {% endfor %}
     </div>
     {% endif %}
-    
+
+    {% if shop.enabled_payment_types.size > 0 %}
+      <div id="footer-payment-methods">
+        <h5>Payment methods we accept</h5>
+        {% for type in shop.enabled_payment_types %}
+          <img src="{{ type | payment_type_img_url }}" />
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <p class="text-center footer-credits">
       <small>
         &copy;{{ 'now' | date: '%Y' }}&nbsp;<strong><a href="/" title="{{ shop.name }} {% include '__localize' with 'homepage' %}">{{ shop.name | replace: ' ', '&nbsp;' }}</a></strong>. <br class="visible-sm">
       </small>
     </p>
+
   </div>
 
 {% if has_footer_navbar %}{% include 'navbar' with 'footer' %}{% endif %}
