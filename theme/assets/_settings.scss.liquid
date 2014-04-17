@@ -632,6 +632,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .carousel-indicators .active{
   background-color: $body-text-colour;
 }
+
+@media (min-width: $screen-xs-min) {
+  .carousel-caption {
+    background-color: transparent;
+    h2 {
+      font-size: 2.5em;
+    }
+  }
+}
+
 @media (min-width: $screen-sm-min){
   $i: 1;
   @each $slide in $slides{
@@ -645,6 +655,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     width: $container-width-small-devices;
     margin-left: -($container-width-small-devices/2);
     background-color: transparent;
+    h2 {
+      font-size: 2.5em;
+    }
   }
   .carousel-indicators li{
     border-color: white;
@@ -661,6 +674,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .carousel-caption{
     width: $container-width-medium-devices;
     margin-left: -($container-width-medium-devices/2);
+    h2 {
+      font-size: 3.5em;
+    }
   }
 }
 
@@ -671,6 +687,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .carousel-caption{
     width: $container-width-large-devices;
     margin-left: -($container-width-large-devices/2);
+    h2 {
+      font-size: 4em;
+    }
   }
 }
 
