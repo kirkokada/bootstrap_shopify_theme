@@ -1,4 +1,4 @@
-{% if settings.show-product-vendor and settings.show-product-type and settings.show-product-collections and settings.show-product-tags %}
+{% if settings.show-product-vendor or settings.show-product-type or settings.show-product-collections or settings.show-product-tags %}
 <table class="table {% include '__table-formatting' %}">
   {% if settings.show-product-vendor %}
   <tr>

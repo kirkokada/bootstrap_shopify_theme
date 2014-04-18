@@ -1,0 +1,41 @@
+{% capture indicators %}{% endcapture %}
+{% capture items %}{% endcapture %}
+{% assign s = 0 %}
+
+{% for image in product.images %}
+  {% capture indicators %}{{ indicators }}<li data-target="#product-carousel" data-slide-to="{{s}}"{% if s == 0 %} class="active"{% endif %}></li>{% endcapture %}
+
+  {% capture items %}
+    {{ items }}
+    <div id="product-image-{{image.id}}" class="item {% if s == 0 %} active {% endif %}">
+      <img src="{{ image.src | product_img_url: 'grande' }}" alt="{{ image.alt }}">
+    </div>
+  {% endcapture %}
+  {% assign s = s | plus: 1 %}
+{% endfor %}
+
+{% unless items == '' %}
+  <div id="product-carousel" class="carousel slide">
+    <!-- Indicators -->
+    {% if s > 1 %}
+    <ol class="carousel-indicators">
+      {{ indicators }}
+    </ol>
+    {% endif %}
+  
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      {{ items }}
+    </div>
+  
+    <!-- Controls -->
+    {% if s > 1 %}
+    <a class="left carousel-control" href="#product-carousel" data-slide="prev">
+      <span class="fa fa-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#product-carousel" data-slide="next">
+      <span class="fa fa-chevron-right"></span>
+    </a>
+    {% endif %}
+  </div>
+{% endunless %}

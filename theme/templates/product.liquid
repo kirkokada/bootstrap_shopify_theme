@@ -1,7 +1,7 @@
 {% include '__has-variables' %}
-{% capture vars %}
+  {% capture vars %}
 {% if product.featured_image == blank %}
-{% include '__image-placeholder' %}
+  {% include '__image-placeholder' %}
 {% else %}
 {% capture image %}
 <img id="main" {% if settings.round-product-images %}class="img-circle" {% endif %}src="{{ product.featured_image.src | product_img_url: 'grande' }}" alt="{{ product.featured_image.alt }}" itemprop="image">
@@ -18,14 +18,8 @@
     <!-- images col -->
     <div class="col-sm-6 {% if settings.product-page-image-placement == 'right' %}col-sm-push-6{% endif %}">
       <div class="row">
-        <div class="col-xs-12 col-sm-12">
-          <div class="thumbnail">
-            {{ image }}
-            <!--             <div class="loader"></div> -->
-          </div>
-        </div>
         {% if product.images.size > 1 %}
-          {% for image in product.images %}
+          {% comment %}{% for image in product.images %}
             <div class="col-xs-6 col-sm-4">
               <a href="#" class="thumbnail product-image" data-main-image="{{ image.src | product_img_url: 'grande' }}">
                 {% if settings.round-product-images %}
@@ -35,7 +29,15 @@
                 {% endif %}
               </a>
             </div>
-          {% endfor %}
+          {% endfor %}{% endcomment %}
+          {% include 'product-slider' %}
+        {% else %}
+          <div class="col-xs-12 col-sm-12">
+            <div class="thumbnail">
+              {{ image }}
+              <!--             <div class="loader"></div> -->
+            </div>
+          </div>
         {% endif %}
       </div>
     </div>
@@ -65,3 +67,5 @@
 </form>
 
 {% include 'product-footer' %}
+{{ 'carousel.js' | asset_url | script_tag }}
+{{ 'collapse.js' | asset_url | script_tag }}
