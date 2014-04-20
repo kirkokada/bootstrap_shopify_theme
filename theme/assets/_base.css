@@ -5435,11 +5435,11 @@ a.icon:hover {
   display: none; }
 
 .main-content table {
-  margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-top: 10px;
+  margin-bottom: 10px; }
 
 .gutter-top {
-  margin-top: 30px; }
+  margin-top: 15px; }
 
 .gutter-bottom {
   margin-bottom: 30px; }
@@ -5611,6 +5611,36 @@ a.icon:hover {
 
 .tt-suggestion p {
   margin: 0; }
+
+/*Accordion styling*/
+
+.accordion-heading {
+  padding: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-size: border-box;
+  border: 1px solid;
+  border-radius: 4px;
+  text-align: center;
+} .accordion-heading a {
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.accordion-body {
+  margin-top: -5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.accordion-inner {
+  padding: 10px;
+}
 
 .centered-layout h1,
 .centered-layout h2,

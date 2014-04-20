@@ -45,7 +45,10 @@
     <!-- details col -->
     <div class="col-sm-6 {% if settings.product-page-image-placement == 'right' %}col-sm-pull-6{% endif %}">
       <h1 class="hidden-xs" itemprop="name">{{ page_title }}</h1>
+
+      {% comment %} Shopify Product Review Plugin{% endcomment %}
       <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+
       <hr>
       {% if has_prices %}
         <div class="lead product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
@@ -58,10 +61,12 @@
       {% endif %}
       <hr>
       {% if has_cart %}{% include 'product-add-to-cart-form' %}{% endif %}
+      <div class="accordion" id="product-description">
+        <p itemprop="description">{% include '__formatted-content' with product.description %}</p>
+      
+        {% include 'product-specs' %}
+      </div>
 
-      <p itemprop="description">{% include '__formatted-content' with product.description %}</p>
-    
-      {% include 'product-specs' %}
     </div>
   </div>
 </form>
@@ -69,3 +74,4 @@
 {% include 'product-footer' %}
 {{ 'carousel.js' | asset_url | script_tag }}
 {{ 'collapse.js' | asset_url | script_tag }}
+{{ 'product_description_accordion.js' | asset_url | script_tag }}

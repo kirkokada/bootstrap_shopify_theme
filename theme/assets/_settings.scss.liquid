@@ -633,6 +633,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   background-color: $body-text-colour;
 }
 
+.accordion-heading {
+  background-color: $body-background-colour;
+  border-color: darken($body-background-colour, 15%);
+  
+  &:hover {
+    background-color: darken($body-background-colour, 15%);
+    border-color: darken($body-background-colour, 15%);
+  }
+}
+
+.accordion-body {
+  background-color: $body-background-colour;
+  border-color: darken($body-background-colour, 15%);
+}
+
 @media (min-width: $screen-xs-min) {
   .carousel-caption {
     background-color: transparent;
