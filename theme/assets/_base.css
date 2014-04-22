@@ -5393,7 +5393,8 @@ a.icon:hover {
 #product-form #quantity {
   max-width: 5em; }
 #product-form #purchase {
-  margin-top: 30px; }
+  margin-top: 5px;
+  margin-bottom: 5px; }
 #product-form .product-price {
   margin-top: 20px;
   font-size: 20px; }
@@ -5744,4 +5745,4 @@ body:after {
     content: 'lg'; }
 
   .caption h4 {
-    height: 4em; } }
+    height: 2em; } }

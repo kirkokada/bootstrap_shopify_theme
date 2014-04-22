@@ -1,0 +1,44 @@
+{% capture indicators %}{% endcapture %}
+{% capture items %}{% endcapture %}
+{% assign s = 0 %}
+{% assign n = 0 %}
+
+{% unless product.images.size < 2 %}
+  <div class="well">
+    <div id="thumbnail-carousel" class="carousel slide thumbnail">
+    
+      <!-- carousel inner -->
+      <div class="carousel-inner">
+        {% for image in product.images %}
+          {% assign n = forloop.index0 | modulo: 3 %}
+          {% if n == 0 %}
+            <div class="item {% if forloop.first %}active {% endif %}">
+              <div class="row">
+          {% endif %}
+                <div id="product-thumbnail-{{image.id}}" class="col-xs-4">
+                  <a href="#" data-target="#product-carousel" data-slide-to="{{s}}">
+                    <img src="{{ image.src | product_img_url: 'thumb' }}" alt="{{ image.alt }}">
+                  </a>
+                </div>
+          {% if n == 2 or forloop.last %}
+              </div>
+            </div>
+          {% endif %}
+          {% assign s = s | plus: 1 %}
+        {% endfor %}
+      </div>
+      <!-- /carousel inner -->
+    
+      <!-- Controls -->
+      {% if product.images.size > 3 %}
+        <a class="left carousel-control" href="#thumbnail-carousel" data-slide="prev">
+          <span class="fa fa-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#thumbnail-carousel" data-slide="next">
+          <span class="fa fa-chevron-right"></span>
+        </a>
+      {% endif %}
+      <!-- /Controls -->
+    </div>
+  </div>
+{% endunless %}

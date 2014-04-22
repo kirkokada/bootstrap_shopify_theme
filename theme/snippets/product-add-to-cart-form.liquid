@@ -1,5 +1,3 @@
-<div class="row">
-  <div class="col-sm-3 add-to-cart-left">
     <div id="product-variants">
       <select id="product-select" name="id" class="form-control">
         {% for v in product.variants %}
@@ -11,15 +9,16 @@
       <label for="quantity">Qty: </label> 
       <input class="form-control" min="1" type="number" id="quantity" name="quantity" value="1" />
     </div>
+    {% if has_prices %}
+      <div class="lead product-price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+        <span id="price-field">{% include 'product-price' with product.price %}</span>
+        <del id="compare-at-price-field" class="text-muted"></del>
+        <span id="sale-field" class="label label-success" style="display: none;">{% include '__localize' with 'On sale' %}</span>
+        <meta itemprop="currency" content="{{ shop.currency }}" />
+        <meta itemprop="identifier" content="sku:{{ product.variants.first.sku }}" />
+      </div>
+    {% endif %}
     <input type="submit" name="add" value="{% include '__localize' with 'Add to cart' %}" id="purchase" class="btn btn-primary btn-lg" />
-  </div>
-  <div class="col-sm-3 add-to-cart-right">
-    
-  </div>
-</div>
-
-
-<hr>
 
 <script>
 var selectCallback = function(variant, selector){
