@@ -48,7 +48,7 @@
     <div class="col-sm-6 {% if settings.product-page-image-placement == 'right' %}col-sm-pull-6{% endif %}">
       <h1 class="hidden-xs" itemprop="name">{{ page_title }}</h1>
       <h5 class="hidden-xs">by {{ product.vendor | link_to_vendor }}</h5>
-      <div class="shopify-product-reviews-badge" data-id="{{ product.id }}"></div>
+      {% comment %}<div class="shopify-product-reviews-badge" data-id="{{ product.id }}"></div>{% endcomment %}
       <hr>
       <div class="row">
         <div class="col-sm-3 add-to-cart-left">

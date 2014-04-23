@@ -1,6 +1,8 @@
 {% if product-thumb-price.price_varies %}
 	<small class="text-muted">{% include '__localize' with 'from' %}</small>&nbsp;
 	{% include 'product-price' with product-thumb-price.price_min %}
+	<small class="text-muted">{% include '__localize' with 'to' %}</small>&nbsp;
+	{% include 'product-price' with product-thumb-price.price_max %}
 {% else %}
 	{% include 'product-price' with product-thumb-price.price %}
 {% endif %}
