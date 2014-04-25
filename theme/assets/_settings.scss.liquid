@@ -78,10 +78,48 @@ $button-colour:
   {% endif %};
 $button-text-colour: {% if settings.button-text-colour != blank %}{{ settings.button-text-colour }}{% else %}false{% endif %};
 
-$main-navbar-background-colour: {% if settings.main-navbar-background-colour != blank %}{{ settings.main-navbar-background-colour }}{% else %}transparent{% endif %};
-$main-navbar-link-colour: {% if settings.main-navbar-link-colour != blank %}{{ settings.main-navbar-link-colour }}{% else %}$body-link-colour{% endif %};
-$navbar-background-colour: {% if settings.navbar-background-colour != blank %}{{ settings.navbar-background-colour }}{% else %}$body-background-colour{% endif %};
-$navbar-link-colour: {% if settings.navbar-link-colour != blank %}{{ settings.navbar-link-colour }}{% else %}$body-link-colour{% endif %};
+$main-navbar-background-colour: 
+  {% if settings.main-navbar-background-colour != blank %}
+    {{ settings.main-navbar-background-colour }}
+  {% else %}
+    transparent
+  {% endif %};
+$main-navbar-link-colour: 
+  {% if settings.main-navbar-link-colour != blank %}
+    {{ settings.main-navbar-link-colour }}
+  {% else %}
+    $body-link-colour
+  {% endif %};
+$navbar-background-colour: 
+  {% if settings.navbar-background-colour != blank %}
+    {{ settings.navbar-background-colour }}
+  {% else %}
+    $body-background-colour
+  {% endif %};
+$footer-navbar-background-colour: 
+  {% if settings.footer-navbar-background-colour != blank %}
+    {{ settings.footer-navbar-background-colour }}
+  {% else %}
+    $body-background-colour
+  {% endif %};
+$navbar-link-colour: 
+  {% if settings.navbar-link-colour != blank %}
+    {{ settings.navbar-link-colour }}
+  {% else %}
+    $body-link-colour
+  {% endif %};
+$footer-navbar-link-colour:
+  {% if settings.footer-navbar-link-colour != blank %}
+    {{ settings.footer-navbar-link-colour }} 
+  {% else %}   
+    $body-link-colour
+  {% endif %};
+$footer-navbar-text-colour:
+  {% if settings.footer-navbar-text-colour != blank %}
+    {{ settings.footer-navbar-text-colour }} 
+  {% else %}   
+    $default-text-colour
+  {% endif %}; 
 $fix-top-navbar: {% if settings.top-navbar-placement == 'fixed-to-top' %}true{% else %}false{% endif %};
 $fix-footer-navbar: {% if settings.footer-navbar-placement == 'fixed-to-bottom' %}true{% else %}false{% endif %};
 
@@ -550,7 +588,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
 }
 
-#navbar-top, #navbar-footer{
+#navbar-top{
   @include background-colour($navbar-background-colour);
   @include link-colour($navbar-link-colour, $navbar-background-colour);
   @include fonts($font-family-navbar, $font-size-navbar, $font-navbar-italic, $font-transform-navbar, $font-weight-navbar);
@@ -566,6 +604,25 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
       background-color: darken-colour($navbar-link-colour, 6%);
     }
   }
+}
+
+#navbar-footer{
+  @include background-colour($footer-navbar-background-colour);
+  @include link-colour($footer-navbar-link-colour, $footer-navbar-background-colour);
+  @include fonts($font-family-navbar, $font-size-navbar, $font-navbar-italic, $font-transform-navbar, $font-weight-navbar);
+  @if $site-background-image and $footer-navbar-background-colour == $body-background-colour and $fix-footer-navbar == false{
+    background-color: transparent;
+  }
+  .navbar-toggle{
+    border-color: $footer-navbar-link-colour;
+    .icon-bar{
+      background-color: $footer-navbar-link-colour;
+    }
+    &:hover, &:focus{
+      background-color: darken-colour($footer-navbar-link-colour, 6%);
+    }
+  }
+  color: $footer-navbar-text-colour;
 }
 
 #navbar-main{

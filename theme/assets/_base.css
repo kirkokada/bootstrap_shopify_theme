@@ -5316,7 +5316,14 @@ h6 {
     opacity: .5; }
 
 #navbar-footer {
+  min-height: 0;
   margin-bottom: 0; }
+
+#footer-navbar-message {
+  font-size: 1em;
+  margin-top: 5px;
+  text-align: center;
+}
 
 #footer-content > .container {
   padding-top: 30px;

@@ -26,5 +26,5 @@
 
   </div>
 
-{% if has_footer_navbar %}{% include 'navbar' with 'footer' %}{% endif %}
+{% if has_footer_navbar or settings.show-footer-navbar-message %}{% include 'navbar' with 'footer' %}{% endif %}
 </footer>

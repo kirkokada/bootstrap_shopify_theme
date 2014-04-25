@@ -142,6 +142,8 @@
       </td>
     </tr>
   </table>
+
+  
   
   <table>
     <tr>
@@ -172,18 +174,45 @@
   
   <table>
     <tr>
-      <th><label for="navbar-background-colour">Navbar top and footer background colour</label></th>
+      <th><label for="navbar-background-colour">Top navbar background colour</label></th>
       <td>
         <input type="text" name="navbar-background-colour" id="navbar-background-colour" class="color" value="" />
       </td>
     </tr>
   </table>
-  
+
   <table>
     <tr>
-      <th><label for="navbar-link-colour">Navbar top and footer link colour</label></th>
+      <th><label for="footer-navbar-background-colour">Footer navbar background colour</label></th>
+      <td>
+        <input type="text" name="footer-navbar-background-colour" id="footer-navbar-background-colour" class="color" value=""/>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th><label for="footer-navbar-text-colour">Footer navbar text color</label></th>
+      <td>
+        <input type="text" name="footer-navbar-text-colour" id="footer-navbar-text-colour" class="color" value="" />
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th><label for="navbar-link-colour">Top navbar link colour</label></th>
       <td>
         <input type="text" name="navbar-link-colour" id="navbar-link-colour" class="color" value="" />
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th><label for="footer-navbar-link-colour">Footer navbar link colour</label></th>
+      <td>
+        <input type="text" name="footer-navbar-link-colour" id="footer-navbar-link-colour" class="color" value=""/>
       </td>
     </tr>
   </table>
@@ -1433,7 +1462,21 @@
       </td>
     </tr>
   </table>
-  
+
+  <table>
+    <tr>
+      <th><label for="show-footer-navbar-message">Show footer message (disables linklists)</label></th>
+      <td><input type="checkbox" name="show-footer-navbar-message" id="show-footer-navbar-message" value="1" /> Yes</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th><label for="footer-navbar-message">Footer message</label></th>
+      <td><textarea name="footer-navbar-message" id="footer-navbar-message"></textarea></td>
+    </tr>
+  </table>
+
   <table>
     <tr>
       <th><label for="footer-navbar-placement">Footer navbar placement</label></th>
