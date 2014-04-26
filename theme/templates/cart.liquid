@@ -6,6 +6,42 @@ function remove_item(id) {
   document.getElementById('updates_'+id).value = 0;
   document.getElementById('cart').submit();
 }
+
+(function($) { 
+  var variantImages = {},
+    productHandles = [];
+  {% for item in cart.items %}
+  productHandles.push('{{ item.product.handle }}');
+  productHandles = $.unique(productHandles);
+  if (typeof variantImages[{{ item.id | json }}] === 'undefined') {
+    variantImages[{{ item.id | json }}] = [];
+  }
+  variantImages[{{ item.id | json }}].push({{ forloop.index0 }});
+  {% endfor %}
+  jQuery(function($) {
+    $('form[action="/cart"]').each(function() {
+      var images = $(this).find('img[src*="/products/"]').hide();
+      var size = images.first().attr('src').match(/thumb|small|compact|medium|large|grande/)[0] || 'small';
+      for (var i=0;i<productHandles.length;i++){
+        $.getJSON("/a/variant-images-1?shop=" + Shopify.shop + "&handle=" + productHandles[i], function(data){
+          $.each(data, function(variantId, image) {
+            if (typeof variantImages[variantId] !== 'undefined') {
+              for (var j=0; j<variantImages[variantId].length;j++) {
+                var oldURLParts = images.eq(variantImages[variantId][j]).attr('src').split('?');
+                var suffix = '?' + oldURLParts[1];
+                var prefix = oldURLParts[0].split('/');
+                prefix.pop();
+                prefix = prefix.join('/') + '/';
+                var filename = image.filename.replace('.', '_' + size + '.');
+                images.eq(variantImages[variantId][j]).attr('src', prefix + filename + suffix).show();
+              };
+            }              
+          });    
+        });
+      }      
+    });
+  });
+})(jQuery);
 </script>
 
 <form action="/cart" method="post" id="cart">
@@ -25,7 +61,7 @@ function remove_item(id) {
         <tbody>
           {% for i in cart.items %}
           <tr>
-            <td class="col-sm-2 hidden-xs"><img src="{{ i.product.featured_image | product_img_url: 'small' }}" class="thumbnail"></td>
+            <td class="col-sm-2 hidden-xs"><img src="{{ i.product.featured_image | product_img_url: 'thumb' }}" class="thumbnail"></td>
             <td>
               <strong>{{ i.product.title | link_to: i.product.url }}</strong>
               <small class="text-muted">{{ i.title | remove: i.product.title | remove: ' - ' }}</small>

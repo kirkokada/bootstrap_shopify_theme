@@ -4592,6 +4592,10 @@ a.thumbnail.active,
 .slim #thumbs td a.active.images {
   border-color: #428bca; }
 
+#thumbs img { 
+  display:none;
+}
+
 .alert, .flash, .flash.notice, .flash.error, #info-bar {
   padding: 15px;
   margin-bottom: 20px;
@@ -4748,7 +4752,7 @@ a.thumbnail.active,
   margin-top: 0; }
 
 .media-object, #thumbs td .images, .slim #thumbs td .images {
-  display: block; }
+  display: none; }
 
 .media-heading, #thumbs td .plisthead, .slim #thumbs td .plisthead {
   margin: 0 0 5px; }
@@ -5938,12 +5942,18 @@ form table {
 
 #thumbs td, .slim #thumbs td {
   display: block;
-  overflow: auto; }
+  overflow: auto; 
+  margin-left: 30px;
+  margin-bottom: 10px;}
   #thumbs td > div, .slim #thumbs td > div {
     margin-right: 1em; }
 
 .slim #thumbs td .images {
   margin-right: 1em; }
+
+#thumbs td div {
+  display: none;
+}
 
 #info-bar {
   text-align: center;
