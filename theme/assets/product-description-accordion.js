@@ -1,38 +1,42 @@
 $(document).ready(function () {
   'use strict';
-  var formatted = $('#product-description').html();
-  var header_tag_open = '<div class="accordion-group"><div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#product-description" href="#collapse-';
-  var header_tag_open_2 = '">';
-  var header_tag_close = '</a></div>';
-  var content_tag_open = '<div class="accordion-body collapse" id="collapse-';
-  var content_tag_open_2 = '"><div class="accordion-inner">';
-  var content_tag_close = '</div></div></div>';
-  var header_begin = 0;
-  var header_end = 0;
-  var content_begin = 0;
-  var content_end = 0;
-  var header = "";
-  var content = "";
-  var i = 0;
+  var accordion_group = '<div class="accordion-group" />';
+  var accordion_heading = '<div class="accordion-heading" />';
+  var accordion_inner = '<div class="accordion-body collapse"><div class="accordion-inner"></div></div>'
+  var i = 1;
   var n = 1;
+  var accordion_toggle = '<a class="accordion-toggle" data-toggle="collapse" data-parent="#product-description" href="" />';
 
-  while (formatted.indexOf("[header]") > -1) {
-    header_begin = formatted.indexOf("[header]", i) + 8;
-    header_end = formatted.indexOf("[/header]", i);
-    content_begin = formatted.indexOf("[content]", i) + 9;
-    content_end = formatted.indexOf("[/content]", i);
-    formatted = formatted.replace("[header]", header_tag_open + n.toString() + header_tag_open_2);
-    formatted = formatted.replace("[/header]", header_tag_close);
-    formatted = formatted.replace("[content]", content_tag_open + n.toString() + content_tag_open_2);
-    formatted = formatted.replace("[/content]", content_tag_close);
-    n++;
-  }
+  $('#product-description h4').each(function() {
+    $(this).contents().unwrap().wrap(function() {
+      return accordion_heading;
+    }).wrap(function() {
+      return accordion_toggle;
+    }).parent().attr('href', '#accordion-' + n.toString());
+      n++;
+  });
 
-  $('#product-description').html(formatted);
+  $('.product-description-content').wrap(accordion_inner);
+
+  $('.product-description-content').contents().unwrap();
+
+  $('.accordion-body').each(function () {
+    $(this).attr('id', 'accordion-' + i.toString());
+    i++;
+  });
+
+  $('.accordion-heading').each(function(index) {
+    $(this).next('.accordion-body').addBack().wrapAll(accordion_group);
+  });
 
   //Strips empty span and p tags
 
   $('#product-description span').each(function() {
+    var $this = $(this);
+    if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+        $this.remove();
+  });
+  $('#product-description div').each(function() {
     var $this = $(this);
     if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
         $this.remove();
