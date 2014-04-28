@@ -8,6 +8,7 @@
 {% endcapture %}
 {% endif %}
 {% endcapture %}
+{% include 'size_chart_modal' %}
 <div class="visible-xs">
   <h1 class="page-header" itemprop="name">{{ page_title }}</h1>
   <h5>by {{ product.vendor | link_to_vendor }}</h5>
@@ -57,6 +58,7 @@
           {% endif %}
         </div>
         <div class="col-sm-3 add-to-cart-right">
+
         </div>
       </div>
       <div class="accordion" id="product-description">
@@ -72,4 +74,3 @@
 </form>
 
 {% include 'product-footer' %}
-{{ 'product-description-accordion.js' | asset_url | script_tag }}
